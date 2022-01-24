@@ -3,7 +3,7 @@ entries:
   gateway:
   - apiVersion: v2
     appVersion: 1.12.2
-    created: "2022-01-20T13:22:34.719881+01:00"
+    created: "2022-01-24T13:21:25.521741+01:00"
     description: Helm chart for deploying Istio gateways
     digest: b17ad87f9528764c134a3069d7b98af5f946bd4504c9a08353052113e7b7927f
     icon: https://istio.io/latest/favicons/android-192x192.png
@@ -17,4 +17,51 @@ entries:
     urls:
     - gateway-1.12.2.tgz
     version: 1.12.2
-generated: "2022-01-20T13:22:34.717959+01:00"
+  jaeger:
+  - apiVersion: v2
+    appVersion: 1.28.0
+    created: "2022-01-24T13:21:25.53135+01:00"
+    dependencies:
+    - condition: provisionDataStore.cassandra
+      name: cassandra
+      repository: https://charts.helm.sh/incubator
+      version: 0.15.3
+    - condition: provisionDataStore.elasticsearch
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ^7.11.1
+    - condition: provisionDataStore.kafka
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.16.0
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.8.0
+    description: A Jaeger Helm chart for Kubernetes
+    digest: d883c2a68a1aa968450b6b18afe9bf38d15e1d7577cfd4bee5cf83130a583922
+    home: https://jaegertracing.io
+    icon: https://camo.githubusercontent.com/afa87494e0753b4b1f5719a2f35aa5263859dffb/687474703a2f2f6a61656765722e72656164746865646f63732e696f2f656e2f6c61746573742f696d616765732f6a61656765722d766563746f722e737667
+    keywords:
+    - jaeger
+    - opentracing
+    - tracing
+    - instrumentation
+    maintainers:
+    - email: david.vonthenen@dell.com
+      name: dvonthenen
+    - email: ankit.mehta@appian.com
+      name: mehta-ankit
+    - email: michael.lorant@fairfaxmedia.com.au
+      name: mikelorant
+    - email: naseem@transit.app
+      name: naseemkullah
+    - email: pavel.nikolov@fairfaxmedia.com.au
+      name: pavelnikolov
+    name: jaeger
+    sources:
+    - https://hub.docker.com/u/jaegertracing/
+    type: application
+    urls:
+    - jaeger-0.52.1.tgz
+    version: 0.52.1
+generated: "2022-01-24T13:21:25.520288+01:00"
